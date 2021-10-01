@@ -46,3 +46,16 @@ my_reader = MyReader()
 print(my_reader.card.num_carte)
 print(my_reader.card.num_nat)
 ```
+
+## Troubleshooting
+
+Install pcsc-tools and make sure that the OS is able to recognize the e-reader
+
+```bash
+# Plug your device
+dmesg -T
+# You shoud see a product named "Smart Card Reader Interface"
+
+apt install pcsc-tools
+pcsc_scan
+```
